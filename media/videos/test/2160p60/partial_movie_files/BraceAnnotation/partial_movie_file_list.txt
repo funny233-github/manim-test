@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/139003253_83371243_223132457.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_2872888188_818020081.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_149972731_3798284578.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_2956616386_1307430780.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_171837254_279729630.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_1200011272_703957451.mp4'
+file 'file:/home/funny/test-manim/media/videos/test/2160p60/partial_movie_files/BraceAnnotation/3120117191_2930018609_1009075008.mp4'
