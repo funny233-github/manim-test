@@ -1,0 +1,5 @@
+# manim
+__pycache__/
+media/
+# py venv
+venv/
