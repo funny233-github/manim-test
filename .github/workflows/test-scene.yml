@@ -14,5 +14,6 @@ jobs:
       - uses: FedericoCarboni/setup-ffmpeg@v2
         id: setup-ffmpeg
       # - uses: openrndr/setup-opengl@v1.1
+      - run: sudo apt update
       - run: sudo apt install texlive libpango1.0-dev -y
       - run: pip3 install manimgl
