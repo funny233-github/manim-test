@@ -21,4 +21,4 @@ jobs:
              pip3 install --upgrade pip;
              pip3 install manimgl pyopengl
       - name: test Scene TextScene
-        run: python3 -m manimlib --uhd myAnimation.py TextScene -o
+        run: python3 -m manimlib -w --uhd myAnimation.py TextScene -o
