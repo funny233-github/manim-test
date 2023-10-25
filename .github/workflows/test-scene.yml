@@ -16,6 +16,7 @@ jobs:
         id: setup-ffmpeg
       - name: install requirements and manimgl
         run: sudo apt update;
+             sudo apt install freeglut3-dev;
              sudo apt install texlive libpango1.0-dev -y;
              pip3 install --upgrade pip;
              pip3 install manimgl pyopengl
