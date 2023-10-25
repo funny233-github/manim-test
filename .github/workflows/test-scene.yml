@@ -1,0 +1,11 @@
+
+name: test-scene
+run-name: ${{ github.actor }} is test scenes
+on:
+  - push
+jobs:
+  run-class-TextScene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
