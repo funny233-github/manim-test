@@ -18,3 +18,5 @@ jobs:
         run: sudo apt update ;
              sudo apt install texlive libpango1.0-dev -y ;
              pip3 install manimgl
+      - name: test Scene TextScene
+        run: python3 -m manimgl -uhd myAnimation.py TextScene -o
