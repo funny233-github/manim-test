@@ -7,6 +7,7 @@ jobs:
   run-class-TextScene:
     runs-on: ubuntu-latest
     steps:
+      - run: sudo apt update
       - uses: actions/checkout@v4
       - name: setup python
         uses: actions/setup-python@v4
@@ -15,8 +16,7 @@ jobs:
       - uses: FedericoCarboni/setup-ffmpeg@v2
         id: setup-ffmpeg
       - name: install requirements and manimgl
-        run: sudo apt update ;
-             sudo apt install texlive libpango1.0-dev -y ;
+        run: sudo apt install texlive libpango1.0-dev opengl -y ;
              pip3 install manimgl
       - name: test Scene TextScene
         run: python3 -m manimlib -uhd myAnimation.py TextScene -o
