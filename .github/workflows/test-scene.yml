@@ -20,7 +20,7 @@ jobs:
              sudo apt install texlive libpango1.0-dev -y;
              pip3 install --upgrade pip;
              pip3 install manimgl
-      - name: test manimgl help
-        run: python3 -m manimlib -h
+      - name: install xvfb
+        run: sudo apt install xvfb
       - name: test Scene TextScene
-        run: python3 -m manimlib -w --uhd myAnimation.py TextScene
+        run: xvfb-run -s "screen 0 4096×2160" python3 -m manimlib -w --uhd myAnimation.py TextScene
