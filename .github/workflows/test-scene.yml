@@ -23,4 +23,4 @@ jobs:
       - name: install xvfb
         run: sudo apt install xvfb
       - name: test Scene TextScene
-        run: xvfb-run -s "screen 0 4096×2160" python3 -m manimlib -w --uhd myAnimation.py TextScene
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TextScene
