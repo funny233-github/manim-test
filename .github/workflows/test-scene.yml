@@ -22,19 +22,19 @@ jobs:
       - name: install latex
         run: sudo apt install texlive-full -y;
       - name: install numpy version 1.24.3
-        run: sudo pip3 install --upgrade pip;
-             sudo pip3 install numpy==1.24.3;
+        run: pip3 install --upgrade pip;
+             pip3 install numpy==1.24.3;
       - name: install manimgl
-        run: sudo pip3 install manimgl
+        run: pip3 install manimgl
       - name: install xvfb
         run: sudo apt install xvfb -y
       - name: test Scene TextScene
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TextScene
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TextScene
       - name: test Scene SquareScene
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py SquareScene
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py SquareScene
       - name: test Scene Tree
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py Tree
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py Tree
       - name: test Scene TestScene
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestScene
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestScene
       - name: test Scene TestNumberScene
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestNumberScen
+        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestNumberScen
