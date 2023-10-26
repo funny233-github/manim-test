@@ -31,10 +31,10 @@ jobs:
       # - name: test Scene TextScene
         # run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TextScene
       - name: test Scene SquareScene
-        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py SquareScene
+        run: xvfb-run -a python3 -m manimlib -w --uhd myAnimation.py SquareScene
       - name: test Scene Tree
-        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py Tree
+        run: xvfb-run -a python3 -m manimlib -w --uhd myAnimation.py Tree
       - name: test Scene TestScene
-        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestScene
+        run: xvfb-run -a python3 -m manimlib -w --uhd myAnimation.py TestScene
       - name: test Scene TestNumberScene
-        run: xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestNumberScen
+        run: xvfb-run -a python3 -m manimlib -w --uhd myAnimation.py TestNumberScen
