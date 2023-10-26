@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is test scenes
 on:
   - push
 jobs:
-  run-class-TextScene:
+  get-requirement-and-test-Scenes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,4 +37,4 @@ jobs:
       - name: test Scene TestScene
         run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestScene
       - name: test Scene TestNumberScene
-        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestNumberScene
+        run: sudo xvfb-run python3 -m manimlib -w --uhd myAnimation.py TestNumberScen
