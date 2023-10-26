@@ -121,7 +121,7 @@ class TreeBox(VMobject):
 class TestScene(Scene):
     def construct(self):
         DT = 1/60
-        tree = TreeBox(Square().shift(DOWN*2),step=9,theta=0)
+        tree = TreeBox(Square().shift(DOWN*2),step=7,theta=0)
         self.add(tree)
         for i in range(314):
             tree.set_theta(i/100)
