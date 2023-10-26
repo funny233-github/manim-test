@@ -14,14 +14,18 @@ jobs:
           python-version: '3.10'
       - uses: FedericoCarboni/setup-ffmpeg@v2
         id: setup-ffmpeg
-      - name: install requirements and manimgl
+      - name: install opengl
         run: sudo apt update;
              sudo apt install freeglut3-dev;
-             sudo apt install libpango1.0-dev -y;
-             sudo apt install texlive-full;
-             sudo pip3 install --upgrade pip;
+      - name: install pango
+        run: sudo apt install libpango1.0-dev -y;
+      - name: install latex
+        run: sudo apt install texlive-full;
+      - name: install numpy version 1.24.3
+        run: sudo pip3 install --upgrade pip;
              sudo pip3 install numpy==1.24.3;
-             sudo pip3 install manimgl
+      - name: install manimgl
+        run: sudo pip3 install manimgl
       - name: install xvfb
         run: sudo apt install xvfb
       - name: test Scene TextScene
