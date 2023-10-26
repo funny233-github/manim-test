@@ -17,7 +17,8 @@ jobs:
       - name: install requirements and manimgl
         run: sudo apt update;
              sudo apt install freeglut3-dev;
-             sudo apt install texlive libpango1.0-dev -y;
+             sudo apt install libpango1.0-dev -y;
+             sudo apt install texlive-full;
              pip3 install --upgrade pip;
              pip3 install numpy==1.24.3;
              pip3 install manimgl
