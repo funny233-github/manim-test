@@ -19,6 +19,7 @@ jobs:
              sudo apt install freeglut3-dev;
              sudo apt install texlive libpango1.0-dev -y;
              pip3 install --upgrade pip;
+             pip3 install numpy==1.24.3;
              pip3 install manimgl
       - name: install xvfb
         run: sudo apt install xvfb
