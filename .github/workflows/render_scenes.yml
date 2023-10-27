@@ -20,10 +20,8 @@ jobs:
       - name: install pango
         run: sudo apt install libpango1.0-dev -y;
       - name: install latex
-        # run: sudo apt install texlive-full texlive-latex-extra -y;
-        run: wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-      - name: install TinyTex-2
-        run: tinytex:::install_prebuilt('TinyTeX-2')
+        run: sudo apt install texlive-base texlive-latex-extra -y;
+        # run: wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
       - name: install numpy version 1.24.3
         run: pip3 install --upgrade pip;
              pip3 install numpy==1.24.3;
