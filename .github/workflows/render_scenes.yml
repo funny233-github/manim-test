@@ -21,8 +21,7 @@ jobs:
         run: sudo apt install libpango1.0-dev -y;
       - name: install latex
         # run: sudo apt install texlive-full texlive-latex-extra -y;
-        uses: teatimeguest/setup-texlive-action@v3
-        id: setup
+        run: wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
       - name: install numpy version 1.24.3
         run: pip3 install --upgrade pip;
              pip3 install numpy==1.24.3;
