@@ -28,13 +28,17 @@ jobs:
         run: pip3 install manimgl
       - name: install xvfb
         run: sudo apt install xvfb -y
-      - name: test Scene TextScene
+      - name: render Scene TextScene
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TextScene"
-      - name: test Scene SquareScene
+      - name: render Scene SquareScene
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py SquareScene"
-      - name: test Scene Tree
+      - name: render Scene Tree
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py Tree"
-      - name: test Scene TestScene
+      - name: render Scene TestScene
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TestScene"
-      - name: test Scene TestNumberScene
+      - name: render Scene TestNumberScene
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TestNumberScen"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-vedios
+          path: videos/*
