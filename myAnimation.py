@@ -129,13 +129,12 @@ class TestScene(Scene):
             print(i)
 class TestNumberScene(Scene):
     def construct(self):
-        num = DecimalNumber().set_value(0).rotate(PI)
-        tree = TreeBox(Square().shift(DOWN*2),step=1,theta=0.1)
-        self.add(num,tree)
-        now = self.time
-        def numUpdater(m):
-            m.set_value(self.time-now)
-        num.add_updater(numUpdater)
-        f_always(tree.set_theta,num.get_value)
-        self.wait(PI)
-        num.remove_updater(numUpdater)
+        DT = 1/60
+        tree = TreeBox(Square().shift(DOWN*2),step=2,theta=0)
+        num = DecimalNumber(number=0).shift(DOWN*2)
+        self.add(tree,num)
+        for i in range(314):
+            tree.set_theta(i/100)
+            num.set_value(i/100) 
+            self.wait(DT)
+            print(i)

@@ -20,10 +20,7 @@ jobs:
       - name: install pango
         run: sudo apt install libpango1.0-dev -y;
       - name: install latex
-        # run: sudo apt install texlive-full texlive-latex-extra -y;
-        uses: DanySK/setup-texlive-action@master
-        with:
-          requirements-file: .github/texlive/requirements.txt
+        run: sudo apt install texlive-full texlive-latex-extra -y;
       - name: install numpy version 1.24.3
         run: pip3 install --upgrade pip;
              pip3 install numpy==1.24.3;
@@ -32,16 +29,16 @@ jobs:
       - name: install xvfb
         run: sudo apt install xvfb -y
 
-      - name: render Scene TextScene
+      - name: test Scene TextScene
         run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py TextScene"
-      - name: render Scene SquareScene
+      - name: test Scene SquareScene
         run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py SquareScene"
-      - name: render Scene Tree
+      - name: test Scene Tree
         run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py Tree"
-      - name: render Scene TestScene
+      - name: test Scene TestScene
         run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py TestScene"
-      - name: render Scene TestNumberScene
-        run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py TestNumberScen"
+      - name: test Scene TestNumberScene
+        run: xvfb-run -a script -c "python3 -m manimlib -w -l myAnimation.py TestNumberScene"
 
       - name: remove test videos
         run: sudo rm -rf videos/
@@ -55,7 +52,7 @@ jobs:
       - name: render Scene TestScene
         run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TestScene"
       - name: render Scene TestNumberScene
-        run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TestNumberScen"
+        run: xvfb-run -a script -c "python3 -m manimlib -w --uhd myAnimation.py TestNumberScene"
       - uses: actions/upload-artifact@v3
         with:
           name: my-vedios
