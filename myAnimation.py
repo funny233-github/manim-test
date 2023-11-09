@@ -8,6 +8,25 @@ class SurroundBox(Rectangle):
                 )
         self.move_to(mobject.get_center())
         self.set_color(color)
+class PathNode(Square):
+    def __init__(self,side_length=0.5,**kwargs):
+        super().__init__(side_length,color=BLUE,**kwargs)
+class BarrierNode(Square):
+    def __init__(self,side_length=0.5,**kwargs):
+        super().__init__(side_length,color=RED,**kwargs)
+
+def MatchPathOrBarrier(x:str):
+    if x == "-":
+        return PathNode()
+    return BarrierNode()
+
+def mapToGrid(grid:str)->Group:
+    transposedGrid = np.transpose([[j for j in i] for i in grid.split()])
+    res = []
+    for i in transposedGrid:
+        col = list(map(MatchPathOrBarrier,i))
+        res.append(Group(*col).arrange(DOWN))
+    return Group(*res).arrange(RIGHT)
 
 class TextScene(Scene):
     def construct(self):
@@ -138,3 +157,25 @@ class TestNumberScene(Scene):
             num.set_value(i/100) 
             self.wait(DT)
             print(i)
+MAP = """
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+---#-----#-----#---
+"""
+class AStarScene(Scene):
+    def construct(self):
+
+        # title = Text("A star pathfinding !!!")
+        # self.play(ShowCreation(title))
+        # self.wait()
+        # self.play(Uncreate(title))
+
+        group:Mobject = mapToGrid(MAP)
+        self.add(group)
